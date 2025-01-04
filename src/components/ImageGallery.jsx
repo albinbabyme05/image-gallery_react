@@ -1,17 +1,18 @@
 import { useState } from "react"
+import './ImageGallery.css'
 
 
-const ImageGallery =(arrImg)=> {
+const ImageGallery =(props)=> {
   const [imageNUmber, setImageNumber] = useState(0)
   const [openImg, setOpenImg] = useState(false)
 
   return (
     <div>
-        <div className="gallers-container">
+        <div className="gallery-container">
             {
-                arrImg && arrImg.map((objImg, position)=>{
+                props.arrImg && props.arrImg.map((objImg, position)=>{
                     return(
-                        <div className="'gallery-div" key={position}>
+                        <div className="gallery-div" key={position}>
                             <img src={objImg.img}/>
                         </div>
                     )
